@@ -1,0 +1,5 @@
+# Bundle layer for dsh-github-market.
+# Applied when a profile lists this bundle (dsh plugin add <pkg>).
+- insert:
+    - id: market
+      name: dsh-github-market

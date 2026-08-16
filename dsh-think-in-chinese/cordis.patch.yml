@@ -1,0 +1,7 @@
+# Bundle layer for dsh-think-in-chinese.
+# Applied when a profile lists this bundle (dsh plugin add <pkg>).
+- insert:
+    - id: think-in-chinese
+      name: dsh-think-in-chinese
+      config:
+        answersInChinese: false
