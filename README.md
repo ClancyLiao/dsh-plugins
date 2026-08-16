@@ -12,24 +12,26 @@ A collection of plugins for [DeepSeek Harness](https://github.com/deepseek-ai/De
 
 ## Install
 
-Each package is a [dsh bundle](https://github.com/deepseek-ai/DeepSeek-Harness/blob/master/docs/user/develop/basic/publish.zh.md): install it with
+Each package is a [dsh bundle](https://github.com/deepseek-ai/DeepSeek-Harness/blob/master/docs/user/develop/basic/publish.zh.md).
+Since the packages are not published to npm yet, install from this checkout:
 
 ```sh
-dsh plugin --profile <profile> add <package-name>
+git clone https://github.com/ClancyLiao/dsh-plugins
+cd dsh-plugins
+dsh plugin --profile <profile> add ./dsh-think-in-chinese
 ```
 
-For example:
+Repeat the `dsh plugin add ./<package>` line for each package you want, for example:
 
 ```sh
-dsh plugin --profile desktop add dsh-think-in-chinese
-dsh plugin --profile desktop add dsh-plugin-inventory-notes
-dsh plugin --profile desktop add dsh-client-ui-plugin-notes
-dsh plugin --profile desktop add dsh-github-market
-dsh plugin --profile desktop add dsh-client-ui-github-market
-dsh plugin --profile desktop add dsh-plugin-composer-optimize
-dsh plugin --profile desktop add dsh-client-ui-composer-optimize
-dsh plugin --profile desktop add dsh-plugin-account-usage
-dsh plugin --profile desktop add dsh-client-ui-account-usage
+dsh plugin --profile desktop add ./dsh-plugin-inventory-notes
+dsh plugin --profile desktop add ./dsh-client-ui-plugin-notes
+dsh plugin --profile desktop add ./dsh-github-market
+dsh plugin --profile desktop add ./dsh-client-ui-github-market
+dsh plugin --profile desktop add ./dsh-plugin-composer-optimize
+dsh plugin --profile desktop add ./dsh-client-ui-composer-optimize
+dsh plugin --profile desktop add ./dsh-plugin-account-usage
+dsh plugin --profile desktop add ./dsh-client-ui-account-usage
 ```
 
 Then restart DSH Desktop (or relaunch `dsh --profile <profile>`).
