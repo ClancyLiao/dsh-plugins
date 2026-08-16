@@ -1,19 +1,21 @@
 # dsh-plugins
 
-A collection of plugins for [DeepSeek Harness](https://github.com/deepseek-ai/DeepSeek-Harness) (topic: `dsh-plugin`).
+[English](README.en.md) | **中文**
 
-| Package | What it does |
+[DeepSeek Harness](https://github.com/deepseek-ai/DeepSeek-Harness) 插件合集（topic：`dsh-plugin`）。
+
+| 包 | 功能 |
 | --- | --- |
-| [dsh-think-in-chinese](dsh-think-in-chinese) | Make the model's thinking/reasoning always output Simplified Chinese |
-| [dsh-plugin-inventory-notes](dsh-plugin-inventory-notes) + [dsh-client-ui-plugin-notes](dsh-client-ui-plugin-notes) | Show a one-line summary on every plugin card in the plugin-list settings tab |
-| [dsh-github-market](dsh-github-market) + [dsh-client-ui-github-market](dsh-client-ui-github-market) | Plugin marketplace tab: browse/search/install GitHub `dsh-plugin` topic plugins |
-| [dsh-plugin-composer-optimize](dsh-plugin-composer-optimize) + [dsh-client-ui-composer-optimize](dsh-client-ui-composer-optimize) | Polish the composer input with the model (a wand icon next to the send button) |
-| [dsh-plugin-account-usage](dsh-plugin-account-usage) + [dsh-client-ui-account-usage](dsh-client-ui-account-usage) | Show the DeepSeek account balance at the bottom of the sidebar |
+| [dsh-think-in-chinese](dsh-think-in-chinese) | 让模型的思考/推理内容始终使用简体中文输出 |
+| [dsh-plugin-inventory-notes](dsh-plugin-inventory-notes) + [dsh-client-ui-plugin-notes](dsh-client-ui-plugin-notes) | 设置 → 插件列表：每张卡片显示一句话简介 |
+| [dsh-github-market](dsh-github-market) + [dsh-client-ui-github-market](dsh-client-ui-github-market) | 插件市场标签页：浏览/搜索/安装 GitHub `dsh-plugin` 插件 |
+| [dsh-plugin-composer-optimize](dsh-plugin-composer-optimize) + [dsh-client-ui-composer-optimize](dsh-client-ui-composer-optimize) | 输入框右下角魔法棒：用模型优化当前输入（类似 workbuddy） |
+| [dsh-plugin-account-usage](dsh-plugin-account-usage) + [dsh-client-ui-account-usage](dsh-client-ui-account-usage) | 侧边栏底部显示 DeepSeek 账号余额与可用状态 |
 
-## Install
+## 安装
 
-Each package is a [dsh bundle](https://github.com/deepseek-ai/DeepSeek-Harness/blob/master/docs/user/develop/basic/publish.zh.md).
-Since the packages are not published to npm yet, install from this checkout:
+每个包都是标准 [dsh bundle](https://github.com/deepseek-ai/DeepSeek-Harness/blob/master/docs/user/develop/basic/publish.zh.md)。
+尚未发布到 npm，请用本仓库 checkout 安装：
 
 ```sh
 git clone https://github.com/ClancyLiao/dsh-plugins
@@ -21,7 +23,7 @@ cd dsh-plugins
 dsh plugin --profile <profile> add ./dsh-think-in-chinese
 ```
 
-Repeat the `dsh plugin add ./<package>` line for each package you want, for example:
+需要哪些包就重复 `dsh plugin add ./<包名>`，例如：
 
 ```sh
 dsh plugin --profile desktop add ./dsh-plugin-inventory-notes
@@ -34,17 +36,16 @@ dsh plugin --profile desktop add ./dsh-plugin-account-usage
 dsh plugin --profile desktop add ./dsh-client-ui-account-usage
 ```
 
-Then restart DSH Desktop (or relaunch `dsh --profile <profile>`).
+安装后重启 DSH Desktop（或重新 `dsh --profile <profile>`）生效。
 
-> Note: `dsh-plugin-inventory-notes` disables the built-in `ui-settings-plugin-inventory`
-> row because `dsh-client-ui-plugin-notes` replaces the plugin-list tab.
+> 注意：`dsh-plugin-inventory-notes` 会禁用内置的 `ui-settings-plugin-inventory` 行
+> （由 `dsh-client-ui-plugin-notes` 替换插件列表标签页）。
 
-## Development
+## 开发
 
-All packages are plain ESM; no build step. `lib/index.js` is the host half
-(and the plugin body), `lib/client.js` is the browser half for client plugins
-(`dsh.client` declared in `package.json`).
+全部为纯 ESM，无构建步骤。`lib/index.js` 是宿主半部分（插件主体），
+client 插件的 `lib/client.js` 是浏览器半部分（`package.json` 声明 `dsh.client`）。
 
-## License
+## 许可
 
 MIT
